@@ -1,0 +1,1 @@
+for i in $(seq 20201221 20201231); do bsub -R rusage[mem=7500] -R "span[hosts=1]" -n 64 -W 18:00 -q long -e /home/eh37w/lsf_jobs/LSB_%J.err -o /home/eh37w/lsf_jobs/LSB_%J.log -N -u erica.hildebrand@umassmed.edu "Rscript permutation_proof_of_principle_EMH_exp4.30and4.39.R $i"; done
